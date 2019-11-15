@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="713.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <center>
+      <LineChart fx:id="chart" animated="false" BorderPane.alignment="CENTER">
+        <xAxis>
+          <NumberAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+   </center>
+   <right>
+      <AnchorPane prefHeight="569.0" prefWidth="226.0" BorderPane.alignment="CENTER">
+         <children>
+            <ComboBox fx:id="comboBox" layoutX="31.0" layoutY="432.0" onAction="#comboChanged" prefWidth="150.0" />
+            <CheckBox fx:id="rungeKutta" layoutX="33.0" layoutY="587.0" mnemonicParsing="false" onAction="#setMode" text="Runge-Kutta" />
+            <CheckBox fx:id="analytical" layoutX="31.0" layoutY="507.0" mnemonicParsing="false" onAction="#setMode" text="Analytical Solution" />
+            <CheckBox fx:id="euler" layoutX="32.0" layoutY="534.0" mnemonicParsing="false" onAction="#setMode" text="Euler Method" />
+            <CheckBox fx:id="improvedEuler" layoutX="33.0" layoutY="560.0" mnemonicParsing="false" onAction="#setMode" text="Improved Euler" />
+            <TextField fx:id="inpX0" layoutX="37.0" layoutY="40.0" prefHeight="44.0" prefWidth="56.0" />
+            <TextField fx:id="inpY0" layoutX="37.0" layoutY="101.0" prefHeight="44.0" prefWidth="55.0" />
+            <TextField fx:id="inpX" layoutX="37.0" layoutY="163.0" prefHeight="44.0" prefWidth="55.0" />
+            <TextField fx:id="inpN" layoutX="37.0" layoutY="225.0" onInputMethodTextChanged="#readInp" prefHeight="44.0" prefWidth="56.0" />
+            <Label layoutX="119.0" layoutY="47.0" text="x0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="119.0" layoutY="108.0" text="y0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="124.0" layoutY="170.0" text="X">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="122.0" layoutY="232.0" text="N">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="sysStat" layoutX="31.0" layoutY="357.0" prefHeight="31.0" prefWidth="165.0" text="System Status">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="plotGraphs" layoutX="32.0" layoutY="619.0" mnemonicParsing="false" onAction="#plotGraphs" prefHeight="40.0" prefWidth="163.0" text="Plot">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <TextField fx:id="inpN2" layoutX="37.0" layoutY="290.0" onInputMethodTextChanged="#readInp" prefHeight="44.0" prefWidth="56.0" />
+            <Label layoutX="122.0" layoutY="297.0" text="N2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
